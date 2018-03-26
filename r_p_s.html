@@ -6,12 +6,21 @@
 <body>
 	<script>
 	function computerPlay() {
-		var choice = ['Rock', 'Paper', 'Scissors'];
-		var play = choice[Math.floor(Math.random() * choice.length)];
-		return ('The computer chose: ' + play);
-
+		let choice = ['Rock', 'Paper', 'Scissors'];
+		let play = choice[Math.floor(Math.random() * choice.length)];
+		alert ('The computer chose: ' + play);
 	}
 	
+	function round (playerSelection, computerSelection) {
+		let choice = ['Rock', 'Paper', 'Scissors'];
+		let pselection = prompt('Please select Rock, Paper or Scissors');
+		playerSelection = pselection;
+		alert ('you chose: ' + playerSelection);
+		
+		computerSelection = computerPlay();
+
+		if 
+	}
 	</script>
 </body>
 </html>
