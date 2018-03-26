@@ -6,31 +6,31 @@
 <body>
 	<script>
 	function computerPlay() {
-		let choice = ['Rock', 'Paper', 'Scissors'];
+		let choice = ['rock', 'paper', 'scissors'];
 		let play = choice[Math.floor(Math.random() * choice.length)];
 		alert ('The computer chose: ' + play);
 		return play;
 	}
 	
-	function round (playerSelection, computerSelection) {
-		let choice = ['rock', 'paper', 'sissors'];
-		let pselection = prompt('Please select Rock, Paper or Scissors');
-		playerSelection = pselection;
-		alert ('you chose: ' + playerSelection);
+	function round () {
 		
-		computerSelection = computerPlay();
+		let pselection = prompt('Please select Rock, Paper or Scissors');
+		alert ('you chose: ' + pselection);
+		
+		playerSelection = pselection.toLowerCase();
+		computerSelection = computerPlay().toLowerCase();
 
-		if (playerSelection.toLowerCase == 'rock' && computerSelection.toLowerCase == 'scissors') {
+		if (playerSelection == 'rock' && computerSelection == 'scissors') {
 			return ('You Win\! Rock beats Scissors\!');
-		} else if (playerSelection.toLowerCase == 'scissors' && computerSelection.toLowerCase == 'rock') {
+		} else if (playerSelection == 'scissors' && computerSelection == 'rock') {
 			return ('You Lose\! Rock beats Scissors\!');
-		} else if(playerSelection.toLowerCase == 'paper' && computerSelection.toLowerCase == 'rock') {
+		} else if(playerSelection == 'paper' && computerSelection == 'rock') {
 			return ('You Win\! Paper beats Rock\!');
-		} else if(playerSelection.toLowerCase == 'rock' && computerSelection.toLowerCase == 'paper') {
+		} else if(playerSelection == 'rock' && computerSelection == 'paper') {
 			return ('You Lose\! Paper beats Rock\!');
-		} else if(playerSelection.toLowerCase == 'scissors' && computerSelection.toLowerCase == 'paper') {
+		} else if(playerSelection == 'scissors' && computerSelection == 'paper') {
 			return ('You Win\! Scissors beats Paper\!');
-		} else if(playerSelection.toLowerCase == 'paper' && computerSelection.toLowerCase == 'scissors') {
+		} else if(playerSelection == 'paper' && computerSelection == 'scissors') {
 			return ('You Lose\! Scissors beats Paper\!');
 		} else {
 			return ('A draw! Please play again!');
