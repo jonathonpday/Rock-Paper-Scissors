@@ -12,6 +12,11 @@
 		return play;
 	}
 	
+
+
+	let playerScore = 0;
+	let computerScore = 0;
+
 	function round () {
 		
 		let pselection = prompt('Please select Rock, Paper or Scissors');
@@ -20,22 +25,71 @@
 		playerSelection = pselection.toLowerCase();
 		computerSelection = computerPlay().toLowerCase();
 
-		if (playerSelection == 'rock' && computerSelection == 'scissors') {
-			return ('You Win\! Rock beats Scissors\!');
-		} else if (playerSelection == 'scissors' && computerSelection == 'rock') {
-			return ('You Lose\! Rock beats Scissors\!');
-		} else if(playerSelection == 'paper' && computerSelection == 'rock') {
-			return ('You Win\! Paper beats Rock\!');
-		} else if(playerSelection == 'rock' && computerSelection == 'paper') {
-			return ('You Lose\! Paper beats Rock\!');
-		} else if(playerSelection == 'scissors' && computerSelection == 'paper') {
-			return ('You Win\! Scissors beats Paper\!');
-		} else if(playerSelection == 'paper' && computerSelection == 'scissors') {
-			return ('You Lose\! Scissors beats Paper\!')
+		if (playerSelection === 'rock' && computerSelection === 'scissors') {
+			playerScore++;
+			console.log ('You Win\! Rock beats Scissors\!');
+		} else if (playerSelection === 'scissors' && computerSelection === 'rock') {
+			computerScore++;
+			console.log ('You Lose\! Rock beats Scissors\!');
+		} else if(playerSelection === 'paper' && computerSelection === 'rock') {
+			playerScore++;
+			console.log ('You Win\! Paper beats Rock\!');
+		} else if(playerSelection === 'rock' && computerSelection === 'paper') {
+			computerScore++;
+			console.log ('You Lose\! Paper beats Rock\!');
+		} else if(playerSelection === 'scissors' && computerSelection === 'paper') {
+			playerScore++;
+			console.log ('You Win\! Scissors beats Paper\!');
+		} else if(playerSelection === 'paper' && computerSelection === 'scissors') {
+			computerScore++;
+			console.log ('You Lose\! Scissors beats Paper\!');
 		} else {
-			return ('A draw! Please play again!')
+			console.log ('A draw! Please play again!');
 		}
 	}
+
+	function game () {
+		round();
+		console.log('Player: ', playerScore, 'Computer: ',computerScore);
+		if (playerScore === 5 || computerScore == 5) {
+			return 'Game Over';
+		} else {
+			round();
+			console.log('Player: ', playerScore, 'Computer: ',computerScore);
+		}
+}
+game()
+
+
+
+
+
+
+
+
+
+			/*playerScore++;
+			console.log ('Players Score: ', playerScore);
+		} else if ((round().includes('Lose'))) {
+			computerScore++;
+			console.log ('Computer Score: ', computerScore);
+		} else {
+			console.log('Its a Draw! Play Again!!!')
+		}*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	</script>
 </body>
 </html>
