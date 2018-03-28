@@ -26,29 +26,46 @@
 		computerSelection = computerPlay().toLowerCase();
 
 		if (playerSelection === 'rock' && computerSelection === 'scissors') {
-			playerScore++;
-			console.log ('You Win\! Rock beats Scissors\!');
+			playerScore++
+			return ('You Win\! Rock beats Scissors\!');
 		} else if (playerSelection === 'scissors' && computerSelection === 'rock') {
 			computerScore++;
-			console.log ('You Lose\! Rock beats Scissors\!');
+			return ('You Lose\! Rock beats Scissors\!');
 		} else if(playerSelection === 'paper' && computerSelection === 'rock') {
 			playerScore++;
-			console.log ('You Win\! Paper beats Rock\!');
+			return ('You Win\! Paper beats Rock\!');
 		} else if(playerSelection === 'rock' && computerSelection === 'paper') {
 			computerScore++;
-			console.log ('You Lose\! Paper beats Rock\!');
+			return ('You Lose\! Paper beats Rock\!');
 		} else if(playerSelection === 'scissors' && computerSelection === 'paper') {
 			playerScore++;
-			console.log ('You Win\! Scissors beats Paper\!');
+			return ('You Win\! Scissors beats Paper\!');
 		} else if(playerSelection === 'paper' && computerSelection === 'scissors') {
 			computerScore++;
-			console.log ('You Lose\! Scissors beats Paper\!');
+			return ('You Lose\! Scissors beats Paper\!');
 		} else {
-			console.log ('A draw! Please play again!');
+			return ('A draw! Please play again!');
 		}
 	}
 
 	function game () {
+		while (playerScore <= 5 || computerScore <= 5) {
+		round();
+		console.log('Player: ', playerScore, 'Computer: ',computerScore);
+		if(playerScore === 5) {
+			console.log('Player Wins!!!');
+		}
+		if(computerScore === 5) {
+			console.log('Player Loses!!!');
+		}
+		}
+	}
+	
+
+
+
+
+/*
 		round();
 		console.log('Player: ', playerScore, 'Computer: ',computerScore);
 		if (playerScore === 5 || computerScore == 5) {
@@ -59,7 +76,7 @@
 		}
 }
 game()
-
+*/
 
 
 
